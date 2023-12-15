@@ -7,7 +7,13 @@ class Product(Base):
     name = Column(String(50), nullable=False)
     description = Column(String(300), nullable=False)
     price = Column(Float, nullable=False)
-    category = Column(String(15), nullable=False)
+    sub_category = Column(String, primary_key=True, nullable=False)
     
+class Category(Base):
+    __tablename__ = "Categories"
+    categories = Column(String(50), nullable=False)
+    sub_category = Column(String, nullable=False, primary_key=True)
+    
+
 
    
